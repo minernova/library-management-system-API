@@ -13,7 +13,7 @@ app.get('/books',(req,res)=>{
     res.render('books')
 })
 app.get('/profile',(req,res)=>{
-    res.send('profile')
+    res.render('profile')
 })
 
 app.listen(process.env.PORT||3000);
