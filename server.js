@@ -1,8 +1,11 @@
 const express=require('express')
+const mongoose=require('mongoose')
 const app=express()
 app.use(express.static(__dirname + '/public'));
 
+require('dotenv').config();
 
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser:true,useUnifiedTopology:true})
 
 
 app.set('view engine','ejs')
