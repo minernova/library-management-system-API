@@ -1,29 +1,24 @@
 [
     {
         "title": "Operating Systems",
-        "authors": [
-            "Harvey M. Deitel",
-            "Paul J. Deitel",
-            "Galvin Gagne"
-        ],
+        "authors": 
+            "Harvey M. Deitel Paul J. Deitel Galvin Gagne",
         "location": "4A",
         "total_count": 60,
         "available_count": 40
     },
     {
         "title": "VHDL primer",
-        "authors": [
-            "J. Bhasker"
-        ],
+        "authors":
+            "J. Bhasker",
         "location": "3B",
         "total_count": 60,
         "available_count": 40
     },
     {
         "title": "Advanced Mathameatics for Engineers",
-        "authors": [
-            "Dennis G. Zill"
-        ],
+        "authors": 
+            "Dennis G. Zill",
         "location": "8D",
         "total_count": 56,
         "available_count": 22
