@@ -2,11 +2,10 @@ require('dotenv').config();
 const express=require('express')
 const connectDB =require('./db/connect')
 const app=express()
-app.use(express.static(__dirname + '/public'));
 
+app.use(express.static(__dirname + '/public'));
 const profileRouter=require('./routes/profile')
 const bookRouter=require('./routes/books')
-
 
 app.set('view engine','ejs')
 
@@ -16,7 +15,9 @@ app.get('/',(req,res)=>{
 
 app.use('/profile',profileRouter)
 app.use('/books',bookRouter)
-
+app.post('/books',(req,res)=>{
+    res.render('books')
+})
 const start = async()=>{
     try{
         await connectDB(process.env.MONGODB_URI);
