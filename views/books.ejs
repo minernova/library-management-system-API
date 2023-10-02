@@ -32,334 +32,34 @@
   <form class="mt-4 mx-auto" style="text-decoration: none;">
     <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center mx-auto">
       <input class="form-control rounded-pill border-0 font-base" id="formGroupExampleInput" type="text"
-        placeholder="Search books, articles, keywords" /><img class="input-box-icon me-3"
+        placeholder="Search books, articles, keywords"  /><img class="input-box-icon me-3"
         src="../img/illustrations/search.png" width="18" alt="" />
     </div>
-
   </form>
   <div class="bg-gray mx-6 mt-5">
-    <div class="mx-6">
-
-      
+    <div class="mx-6">     
       <div class="d-flex flex-row bd-highlight justify-content-between mt-4 mb-3">
         <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
+          <% books.forEach(function(book) { %>
+          <div class="card-body">                     
+            <h5 class="card-title"><%= book.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= book.author %></h6>
 
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
               <p>Available</p>
-              <p>3/5</p>
+              <p><%= book.available_count %></p>
             </li>
             <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
+              <p>Location</p>
+              <p><%= book.location%></p>
+            </li>           
           </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        
-      </div>
-      <div class="d-flex flex-row bd-highlight justify-content-between mt-4 mb-3">
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        
-      </div>
-      <div class="d-flex flex-row bd-highlight justify-content-between mt-4 mb-3">
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        <div class="card mx-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Book title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-            
-
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Available</p>
-              <p>3/5</p>
-            </li>
-            <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-              <p>Loaction</p>
-              <p>D-5</p>
-            </li>
-           
-          </ul>
-        </div>
-        
-      </div>
-        <div class="d-flex flex-row bd-highlight justify-content-between mt-4 mb-3">
-          <div class="card mx-3" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Book title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-              
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Available</p>
-                <p>3/5</p>
-              </li>
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Loaction</p>
-                <p>D-5</p>
-              </li>
-            
-            </ul>
-          </div>
-          <div class="card mx-3" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Book title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-              
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Available</p>
-                <p>3/5</p>
-              </li>
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Loaction</p>
-                <p>D-5</p>
-              </li>
-            
-            </ul>
-          </div>
-          <div class="card mx-3" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Book title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-              
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Available</p>
-                <p>3/5</p>
-              </li>
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Loaction</p>
-                <p>D-5</p>
-              </li>
-            
-            </ul>
-          </div>
-          <div class="card mx-3" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Book title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Author</h6>
-              
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Available</p>
-                <p>3/5</p>
-              </li>
-              <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
-                <p>Loaction</p>
-                <p>D-5</p>
-              </li>
-            
-            </ul>
-          </div>
-          
-        </div>
+          <% }) %>
+        </div>      
+      </div>      
     </div>
-
-
   </div>
 </body>
 
