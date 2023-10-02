@@ -5,7 +5,11 @@ const Book = require('../models/Book'); // Import your Book model
 router.get("/", async (req, res) => {
   try {
     const search = req.query.search || ''; 
-    const book = await Book.find({ title: { $regex: search, $options: 'i' } });
+    var book = await Book.find({});
+    if (search) {
+      book=book.filter(b => b.title.toLowerCase().includes(search) || b.authors.toLowerCase().includes(search));
+    }
+
     const response = { book, search};
     console.log(response);
     res.status(200).render('books', {books : response.book, search: response.search});

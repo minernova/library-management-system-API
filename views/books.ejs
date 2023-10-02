@@ -29,36 +29,38 @@
     </div>
   </nav>
   <div class="mt-6 "> &nbsp;</div>
-  <form class="mt-4 mx-auto" style="text-decoration: none;">
+  <form action="/books" method="get" class="mt-4 mx-auto" style="text-decoration: none;">
     <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center mx-auto">
-      <input class="form-control rounded-pill border-0 font-base" id="formGroupExampleInput" type="text"
+      <input class="form-control rounded-pill border-0 font-base" id="search" type="search" name="search"
         placeholder="Search books, articles, keywords"  /><img class="input-box-icon me-3"
         src="../img/illustrations/search.png" width="18" alt="" />
     </div>
   </form>
   <div class="bg-gray mx-6 mt-5">
-    <div class="mx-6">     
-      <div class="d-flex flex-row bd-highlight justify-content-between mt-4 mb-3">
+    <% for(var i=0;i<books.length;i+=4) {%>
+      <div class="mx-6">     
+        <div class="d-flex flex-row bd-highlight justify-content-start mt-4 mb-3">
+          <% for(var j=0;j<books.length && j<i+4;j++) {%>
         <div class="card mx-3" style="width: 18rem;">
-          <% books.forEach(function(book) { %>
           <div class="card-body">                     
-            <h5 class="card-title"><%= book.title %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= book.author %></h6>
+            <h5 class="card-title"><%= books[j].title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= books[j].authors %></h6>
 
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
               <p>Available</p>
-              <p><%= book.available_count %></p>
+              <p><%= books[j].available_count %>/<%= books[j].total_count %></p>
             </li>
             <li class="list-group-item d-flex pb-0 mt-1 justify-content-between ">
               <p>Location</p>
-              <p><%= book.location%></p>
+              <p><%= books[j].location %></p>
             </li>           
           </ul>
-          <% }) %>
         </div>      
+        <% } %>
       </div>      
+      <% } %>
     </div>
   </div>
 </body>
