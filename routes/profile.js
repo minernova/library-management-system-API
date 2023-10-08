@@ -4,9 +4,14 @@ const router = require('express').Router();
 
 router.get("/", async (req, res) => {
     var search = req.query.search || ''
-    var student = await Student.find({})
+    var students = await Student.find({})
+    var student={}
+    if(search){
+        student=students.find(student => student.enrollment_no.toLowerCase().match(search))
+
+    }
     console.log(student)
-    res.render("profile", { student: student})
+    res.render("profile", { student: student,search: search})
 })
 
 module.exports = router;

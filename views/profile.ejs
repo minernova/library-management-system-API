@@ -24,7 +24,7 @@
       </a>
       <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-          <li class="nav-item"><a class="nav-link " aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link " aria-current="page" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link " href="/books">Books</a></li>
           <li class="nav-item"><a class="nav-link fw-medium active" href="/profile">Profile</a></li>
 
@@ -33,7 +33,7 @@
       </div>
     </div>
   </nav>
-  
+
   <div class="container mt-5">
     <div class="mt-6 "> &nbsp;</div>
 
@@ -41,124 +41,122 @@
 
 
       <!-- /Breadcrumb -->
-      <form action="/profile" method="get"  class="mt-4 mx-auto" style="text-decoration: none;">
+      <form action="/profile" method="get" class="mt-4 mx-auto" style="text-decoration: none;">
         <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center mx-auto">
           <input class="form-control rounded-pill border-0 font-base" id="search" type="search" name="search"
+          value="<%= search %>"
             placeholder="Search strudent by Enrollment no." /><img class="input-box-icon me-3"
             src="../img/illustrations/search.png" width="18" alt="" />
         </div>
-    
+
       </form>
 
-      <div class="row gutters-sm mt-5">
-        <div class="col-md-4 mb-3">
-          <div class="card p-0">
-            <div class="card-body">
-              <div class="d-flex flex-column align-items-center text-center">
-                <div class="mt-3">
-                  <h2>Shreya Sharma</h2>
-                  <p class="text-secondary mb-1">Student,Iet Davv </p>
-                  <p class="text-muted font-size-sm">Indore (MP)</p>
-                  <p class="text-muted font-size-sm">Account active since 2023</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-8 ">
-          <div class="card mb-3">
-            <div class="card-body my-3">
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Full Name</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  SHREYA SHARMA
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Email</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  fip@jukmuh.gmail.com
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Enrollment No</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  DE20485
+      <% if(search){ %>
+        <% if(student){ %>
+          <div class="row gutters-sm mt-5">
+            <div class="col-md-4 mb-3">
+              <div class="card p-0">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <div class="my-3">
+                      <h2><%= student.name %></h2>
+                      <p class="text-secondary mb-1 mt-4">Student, IET DAVV </p>
+                      <p class="text-muted font-size-sm mt-2">Indore (MP)</p>
+                      <!-- <p class="text-muted font-size-sm">Account active since 2023</p> -->
+                    </div>
+                  </div>
                 </div>
               </div>
 
             </div>
+            <div class="col-md-8 ">
+              <div class="card mb-3">
+                <div class="card-body my-3">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class=" mt-1">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= student.name %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mt-1">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= student.email %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mt-1">Enrollment No</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= student.enrollment_no %>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
           </div>
-        </div>
+          <div class="row gutters-sm">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                  Books</h5>
+                <div class="table-responsive">
+                  <table class="table table-borderless mb-0">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>Book Name</th>
+                        <th>Issued on</th>
+                        <th>Issued till </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% student.books_issued.forEach((book,i)=>{ var issuedOn=new Date(book.issue_date) 
+                        var issuedTill=new Date(book.issue_date)
+                        issuedTill.setDate(issuedTill.getDate()+90)
+                        %>
+
+                        <tr>
+                          <td><%= i+1  %></td>
+                          <td><%= book.name %></td>
+                          <td><%= issuedOn.toLocaleDateString() %></td>
+                          <td><%= issuedTill.toLocaleDateString() %></td>
+                        </tr>
+                      
+                      <%} ); %>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
 
-      </div>
-      <div class="row gutters-sm">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
-              Books</h5>
-            <div class="table-responsive">
-              <table class="table table-borderless mb-0">
-                <thead class="thead-light">
-                  <tr>
-                    <th>#</th>
-                    <th>Book Name</th>
-                    <th>Issued on</th>
-                    <th>Issued till </th>
-                    <th>late return fees</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>AVR Microcontroller</td>
-                    <td>01/01/2023</td>
-                    <td>01/03/2023</td>
-                    <td>Returned</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Computer Networks</td>
-                    <td>21/05/2023</td>
-                    <td>21/08/2023</td>
-                    <td>Return Pending</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Bl Theraja</td>
-                    <td>18/03/2023</td>
-                    <td>18/09/2023</td>
-                    <td>Return Pending</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Book on Operating Systems </td>
-                    <td>02/05/2023</td>
-                    <td>02/08/2023</td>
-                    <td>Returned</td>
-                  </tr>
 
-                </tbody>
-              </table>
+
             </div>
           </div>
+        <% } else{%>
+          <div class="w-auto mt-10  text-center">
+            <h2 class="mx-auto text-size-lg text-secondary ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg>
+               data not found
 
-
-
-
-        </div>
-      </div>
-
+            </h2>
+          </div>
+      <% } }%>
     </div>
   </div>
 
