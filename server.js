@@ -5,6 +5,7 @@ const app=express()
 
 app.use(express.static(__dirname + '/public'));
 const profileRouter=require('./routes/profile')
+const validateStudentRoute=require('./routes/api/validate-student-route')
 const bookRouter=require('./routes/books')
 
 app.set('view engine','ejs')
@@ -14,6 +15,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/profile',profileRouter)
+app.use('/api/validate-student',validateStudentRoute)
 app.use('/books',bookRouter)
 app.post('/books',(req,res)=>{
     res.render('books')
