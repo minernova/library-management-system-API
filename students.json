@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Ram Agrawal",
+        "enrollment_no": 
+            "DE20378",
+        "rfid_no": "fdbf42",
+        "books_issued":  [
+            {
+                "book_id": "1",
+                "name": "Operating System",
+                "issue_date": "2019-11-01"
+            },
+            {
+                "book_id": "2",
+                "name": "VHDL Primer",
+                "issue_date": "2019-11-01"
+            }
+        ]
+    },
+    {
+        "name": "Bharti Patel",
+        "enrollment_no": 
+            "DE20320",
+        "rfid_no": "rths62",
+        "books_issued": [
+            {
+                "book_id": "1",
+                "name": "Operating System",
+                "issue_date": "2019-11-01"
+            },
+            {
+                "book_id": "2",
+                "name": "VHDL Primer",
+                "issue_date": "2019-11-01"
+            }
+        ]
+    },
+    {
+        "name": "Deepak Mishra",
+        "enrollment_no": 
+            "DE19297",
+        "rfid_no": "bng82",
+        "books_issued":  [
+            {
+                "book_id": "1",
+                "name": "Operating System",
+                "issue_date": "2019-11-01"
+            },
+            {
+                "book_id": "2",
+                "name": "VHDL Primer",
+                "issue_date": "2019-11-01"
+            }
+        ]
+    },
+    {
+        "name": "Shreya Sharma",
+        "enrollment_no": 
+            "DE20404",
+        "rfid_no": "mkhi94",
+        "books_issued":  [
+            {
+                "book_id": "1",
+                "name": "Operating System",
+                "issue_date": "2019-11-01"
+            }
+        ]
+    }
+]
