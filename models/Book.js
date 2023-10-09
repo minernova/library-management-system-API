@@ -5,6 +5,10 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    rfid:{
+        type:String,
+        required:true
+    },
     authors:{
         type:String,
         required:true

@@ -3,7 +3,7 @@ const Student = require('../../models/Student');
 const router = require('express').Router();
 
 router.get('/', async (req, res)=> {
-    var rfid = req.query.rfid || '';
+    const rfid = req.query.rfid || '';
     var isValidStudent = false;
     if (rfid) {
         var student=await Student.findOne({rfid_no:rfid});
