@@ -8,6 +8,7 @@ const profileRouter=require('./routes/profile')
 const bookRouter=require('./routes/books')
 const validateStudentRoute=require('./routes/api/validate-student-route')
 const issueBookRoute=require('./routes/api/issue-book-route')
+const returnBookRoute=require('./routes/api/return-book-route')
 
 app.set('view engine','ejs')
 
@@ -19,6 +20,7 @@ app.use('/profile',profileRouter)
 app.use('/books',bookRouter)
 app.use('/api/validate-student',validateStudentRoute)
 app.use('/api/issue-book',issueBookRoute)
+app.use('/api/return-book',returnBookRoute)
 
 app.post('/books',(req,res)=>{
     res.render('books')
