@@ -24,19 +24,24 @@ router.get('/', async (req, res) => {
     })
     console.log(newArray);
 
-    student.books_issued = newArray
-
-    if (contains)
+    
+    if (contains){
+        student.books_issued = newArray
         book.available_count = book.available_count + 1;
-    await book.save();
-    await student.save();
+        await book.save();
+        await student.save();
+        res.send({ message: "book returned" });
+    }
+    else{
+        res.send({ message: "book not issued to "+ student.name  });
+    }
     console.log("-------------after--------------");
     console.log(book, student);
 
 
 
 
-    res.send({ isValidStudent: true });
+    
 });
 
 module.exports = router;
