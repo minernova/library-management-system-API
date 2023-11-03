@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     console.log(book);
 
     if(book.available_count==0) {
-        res.send({ issued:false });
+        res.send({ message:"book not available" });
     }
     student.books_issued.forEach(b=>{
         if(b.book_id.equals(book._id)){
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
         await student.save();
         console.log("-------------after--------------");
         console.log(book,student);
-        res.send({message:"student validated"})
+        res.send({message:book.title+" issued to "+student.name})
 
     }
 
