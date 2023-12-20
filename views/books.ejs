@@ -40,7 +40,7 @@
     <% for(var i=0;i<books.length;i+=4) {%>
       <div class="mx-6">     
         <div class="d-flex flex-row bd-highlight justify-content-start mt-4 mb-3">
-          <% for(var j=0;j<books.length && j<i+4;j++) {%>
+          <% for(var j=i;j<books.length && j<i+4;j++) {%>
         <div class="card mx-3" style="width: 18rem;">
           <div class="card-body">                     
             <h5 class="card-title"><%= books[j].title %></h5>
