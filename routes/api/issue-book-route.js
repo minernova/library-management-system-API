@@ -16,12 +16,15 @@ router.get('/', async (req, res) => {
     if(book.available_count==0) {
         res.send({ message:"book not available" });
     }
-    student.books_issued.forEach(b=>{
-        if(b.book_id.equals(book._id)){
-            message="book already issued to student"
-            return;
-        }
-    })
+    if(student.books_issued){
+        student.books_issued.forEach(b=>{
+            if(b.book_id.equals(book._id)){
+                message="book already issued to student"
+                return;
+            }
+        })
+
+    }
     if(message){
         res.send({ message:message});
     }

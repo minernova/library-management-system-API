@@ -6,8 +6,8 @@ const bookSchema = new mongoose.Schema({
         required:true
     },
     rfid:{
-        type:String,
-        required:true
+        type:Array,
+        default:[]
     },
     authors:{
         type:String,
