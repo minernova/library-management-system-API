@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     }
     if(student.books_issued){
         student.books_issued.forEach(b=>{
-            if(b.book_id.equals(book._id)){
+            if(b.book_id===book._id){
                 message="book already issued to student"
                 return;
             }
