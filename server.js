@@ -23,7 +23,7 @@ app.use('/api/issue-book',issueBookRoute)
 app.use('/api/return-book',returnBookRoute)
 
 app.get('/',(req,res)=>{
-    res.send('hosted on: https://slms-wj6v.onrender.com')
+    res.send(`Website hosted <a href='https://slms-wj6v.onrender.com'> here <a> `)
 })
 app.post('/books',(req,res)=>{
     res.render('books')
