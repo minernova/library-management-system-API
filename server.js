@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express=require('express')
 const connectDB =require('./db/connect')
+const cors =require('cors')
 const app=express()
 
 app.use(express.static(__dirname + '/public'));
@@ -12,9 +13,8 @@ const returnBookRoute=require('./routes/api/return-book-route')
 
 app.set('view engine','ejs')
 
-app.get('/',(req,res)=>{
-    res.render('index')
-})
+app.use(cors());
+
 
 app.use('/profile',profileRouter)
 app.use('/books',bookRouter)

@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
     }
     console.log(student)
-    res.render("profile", { student: student,search: search})
+    res.send({ student: student,search: search})
 })
 
 module.exports = router;

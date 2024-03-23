@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
     const response = { book, search};
     console.log(response);
-    res.status(200).render('books', {books : response.book, search: response.search});
+    res.status(200).send({books : response.book, search: response.search});
     
 
   } catch (err) {
