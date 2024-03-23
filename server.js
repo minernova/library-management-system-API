@@ -22,6 +22,9 @@ app.use('/api/validate-student',validateStudentRoute)
 app.use('/api/issue-book',issueBookRoute)
 app.use('/api/return-book',returnBookRoute)
 
+app.get('/',(req,res)=>{
+    res.send('hosted on: https://slms-wj6v.onrender.com')
+})
 app.post('/books',(req,res)=>{
     res.render('books')
 })
